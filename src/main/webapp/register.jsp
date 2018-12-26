@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>Login Form</title>
@@ -48,7 +49,7 @@
                     var pwds;
                     var tele;
 
-                    $(".password").blur(function () {  //获取标签对象，绑定事件
+                    $(".password").keyup(function () {  //获取标签对象，绑定事件
                         un = $("#unames").val(); //通过id获取这个标签对象,再获取这个对象的值
                         pwd = $("#pwd").val();
                         pwds = $("#pwds").val();
@@ -64,18 +65,21 @@
                                 if(result == "13"){
                                     $("#message").text("可以注册");
                                     $("#pmes").text("√");
-                                    $("#btn").removeAttr("disabled");
+                                    $("#btn").attr("disabled",false);
                                 }
                                 if(result == "14"){
                                     $("#message").text("可以注册");
                                     $("#pmes").text("密码不一致");
+                                    $("#btn").attr("disabled",true);
                                 }
                                 if(result == "15"){
                                     $("#message").text("可以注册");
                                     $("#pmes").text("密码不能为空");
+                                    $("#btn").attr("disabled",true);
                                 }
                                 if (result == "2"){
                                     $("#message").text("用户名已存在");
+                                    $("#btn").attr("disabled",true);
                                 }
                             }
                         });

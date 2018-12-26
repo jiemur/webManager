@@ -25,8 +25,8 @@ body {
 	width: 80%;
 	text-align: center;
 	position: relative;
-	left: 240px;
-	top: 75px;
+	left: 0px;
+	top: 0px;
 }
 
 .leftTiyle {
@@ -83,4 +83,9 @@ body {
 }
 .content table tbody tr:nth-child(odd){
 	background-color: blanchedalmond;
+}
+.big{
+	width: 500px;
+	height: 100%;
+	border: black solid 1px;
 }

@@ -1,8 +1,8 @@
 package com.wzn.controller;
 
-import com.wzn.pojo.Product;
-import com.wzn.service.IProductService;
-import com.wzn.service.ProductServiceImpl;
+import com.wzn.pojo.Brand;
+import com.wzn.service.BrandServiceImpl;
+import com.wzn.service.IBrandService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,13 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/list")
-public class ListServlet extends HttpServlet {
-    private IProductService service=new ProductServiceImpl();
+@WebServlet("/brandList")
+public class BrandListServlet extends HttpServlet {
+    private IBrandService service=new BrandServiceImpl();
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<Product> lists=service.getLists();
-        req.setAttribute("lists",lists);
-        req.getRequestDispatcher("list.jsp").forward(req,resp);
+       List<Brand> lists= service.getLists();
+       req.setAttribute("lists",lists);
+       req.getRequestDispatcher("brand.jsp").forward(req,resp);
     }
 }

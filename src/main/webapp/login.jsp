@@ -32,7 +32,7 @@
                 <div class="sign">
                     <input type="button" value="登录" class="submit" id="btn"/>
                     <div style="width: 88.8px;height: 35.2px;background-color: #0091e6;margin-left: 84px;border-radius: .3em;line-height: 35.2px;cursor: pointer;margin-top: 10px;font-weight: 600;"><a href="register.jsp" style="color: white">注册</a></div>
-                    <div class="pt"><a href="register.jsp">普通用户登录</a></div>
+                    <div class="pt"><a href="register.jsp">忘记密码</a></div>
                 </div>
             </form>
 

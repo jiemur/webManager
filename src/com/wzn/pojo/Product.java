@@ -9,4 +9,6 @@ public class Product {
     private double price;
     private String des;
     private String url;
+    private int inv;
+    private int brandId;
 }

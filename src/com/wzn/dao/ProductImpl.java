@@ -21,6 +21,8 @@ public class ProductImpl implements IProductDao {
                     p.setDes(rs.getString("product_des"));
                     p.setPrice(rs.getDouble("price"));
                     p.setUrl(rs.getString("url"));
+                    p.setInv(rs.getInt("product_inventory"));
+                    p.setBrandId(rs.getInt("brand_id"));
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
@@ -39,7 +41,7 @@ public class ProductImpl implements IProductDao {
     @Override
     public int update(Product product) {
 
-        int  a= JdbcUtil.executeUpdate("update product set product_name=?,price=?,product_des=?,url=? where product_id=?",product.getName(),product.getPrice(),product.getDes(),product.getUrl());
+        int  a= JdbcUtil.executeUpdate("update product set  product_name=?,price=?,product_des=?,product_inventory=?,url=?,brand_id=? where product_id=?", product.getName(),product.getPrice(),product.getDes(),product.getInv(),product.getUrl(),product.getBrandId(),product.getId());
         return a;
     }
 
@@ -55,14 +57,18 @@ public class ProductImpl implements IProductDao {
                     p.setDes(rs.getString("product_des"));
                     p.setPrice(rs.getDouble("price"));
                     p.setUrl(rs.getString("url"));
-
+                    p.setInv(rs.getInt("product_inventory"));
+                    p.setBrandId(rs.getInt("brand_id"));
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
-
-
                 return p;
             }
         },id);
+    }
+
+    @Override
+    public int add(Product product) {
+        return JdbcUtil.executeUpdate("insert into product(product_name,price,product_des,url,product_inventory,brand_id) values(?,?,?,?,?,?)",product.getName(),product.getPrice(),product.getDes(),product.getUrl(),product.getInv(),product.getBrandId());
     }
 }
