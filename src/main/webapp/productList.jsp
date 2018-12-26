@@ -12,7 +12,9 @@
     <meta charset="utf-8" />
     <title>首页</title>
     <link rel="stylesheet" href="css/page.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+
     <script type="text/javascript" src="js/index.js" ></script>
 </head>
 
@@ -21,7 +23,7 @@
 <div class="left">
     <div class="bigTitle">后台管理系统</div>
     <div class="lines">
-      <a href="brandList">  <div onclick="pageClick(this)"  class="active"><img src="img/icon-1.png" />品牌管理</div></a>
+      <a href="brandList">  <div onclick="pageClick(this)" ><img src="img/icon-1.png" />品牌管理</div></a>
         <a href="productList"><div onclick="pageClick(this)"><img src="img/icon-2.png" />商品管理</div></a>
         <a href="selef.jsp"><div onclick="pageClick(this)"><img src="img/icon-3.png" />个人信息管理</div></a>
         <div onclick="pageClick(this)"><img src="img/icon-4.png" />收货地址管理</div>
@@ -29,11 +31,15 @@
     </div>
 </div>
 <div class="top">
-    <%--<div class="leftTiyle" id="flTitle">业务人员管理</div>--%>
-    <div class="thisUser"><a href="login.jsp">退出</a></div>
+    <div id="time1" style="font-size: 18px">
+        <script type="text/javascript">
+            setInterval("document.getElementById('time1').innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);
+        </script>
+    </div>
+    <div class="thisUser" style="width: 50px;height: 50px;margin-top: -51px"><a href="login.jsp">退出</a></div>
 </div>
 <div class="content" style="color: #0091e6">
-    <table >
+    <table class="table table-hover">
         <a href="add.jsp">添加</a>
         <caption>商品信息</caption>
         <thead>
@@ -54,7 +60,7 @@
                 <td>${pro.id}</td>
                 <td>${pro.name}</td>
                 <td>${pro.price}</td>
-                <td>${pro.url}</td>
+                <td><img src="${pro.url}"></td>
                 <td>${pro.des}</td>
                 <td>${pro.inv}</td>
                 <td>${pro.brandId}</td>

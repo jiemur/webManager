@@ -22,9 +22,10 @@ public class DoAddServlet extends HttpServlet {
         String name = req.getParameter("name");
         double price = Double.parseDouble(req.getParameter("price"));
         String des = req.getParameter("des");
+         int brandId=Integer.parseInt(req.getParameter("brandId"));
         int inv=Integer.parseInt(req.getParameter("inv")) ;
         Part part=req.getPart("file");//获取上传文件
-        System.out.println(part.getSubmittedFileName());
+        //System.out.println(part.getSubmittedFileName());
         /*文件上传后的存储路径和名称*/
         String str="C:\\Users\\wzn\\webManager\\src\\main\\webapp\\img\\"+part.getSubmittedFileName();
         File file=new File(str);
@@ -45,8 +46,9 @@ public class DoAddServlet extends HttpServlet {
         p.setPrice(price);
         p.setInv(inv);
         p.setUrl(url);
+        p.setBrandId(brandId);
         service.add(p);
         /*重定向*/
-        resp.sendRedirect("list");
+        resp.sendRedirect("productList");
     }
 }

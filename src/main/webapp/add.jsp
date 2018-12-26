@@ -18,6 +18,7 @@
         商品价格:<input type="text" name="price"><br>
         商品图片:<input type="file" name="file" onchange="imgChange(this)"> <img id="img"><br>
         商品描述:<input type="text" name="des"><br>
+        品牌名称:<input type="text" name="brandId"><br>
         商品库存:<input type="text" name="inv"><br>
         <input type="submit" value="添加">
     </form>

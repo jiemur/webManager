@@ -39,7 +39,10 @@ body {
 
 .thisUser {
 	float: right;
-	margin-right: 30px;
+	margin-top: -54px;
+	margin-right: 27px;
+
+	display: inline-block;
 }
 
 .bigTitle {

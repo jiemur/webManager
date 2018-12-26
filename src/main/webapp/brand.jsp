@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.util.Date" %><%--
   Created by IntelliJ IDEA.
   User: wzn
   Date: 2018/12/25
@@ -30,20 +30,24 @@
     </div>
 </div>
 <div class="top">
-    <%--<div class="leftTiyle" id="flTitle">业务人员管理</div>--%>
-    <div class="thisUser"><a href="login.jsp">退出</a></div>
+    <div class="leftTiyle" id="flTitle"></div>
+    <div id="time1" style="font-size: 18px;width: 400px;height: 50px">
+        <script type="text/javascript">
+            setInterval("document.getElementById('time1').innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);
+        </script>
+    </div>
+    <div class="thisUser" style="width: 50px;height: 50px;margin-top: -51px"><a href="login.jsp">退出</a></div>
 </div>
 <div class="content" style="color: #0091e6">
-
-    <table >
+    <table class="table table-hover">
         <a href="addBran.jsp">添加</a>
+        <caption>品牌信息</caption>
         <thead>
             <tr>
                 <th>品牌编号</th>
                 <th>品牌名称</th>
                 <th>品牌描述</th>
                 <th>品牌操作</th>
-
             </tr>
         </thead>
         <tbody>
@@ -52,7 +56,7 @@
                 <td>${bran.id}</td>
                 <td>${bran.name}</td>
                 <td>${bran.des}</td>
-                <td><a href="delete?id=${bran.id}">删除</a>&nbsp|&nbsp<a href="update?id=${bran.id}">修改</a></td>
+                <td><a href="deleteB?id=${bran.id}">删除</a>&nbsp|&nbsp<a href="updateB?id=${bran.id}">修改</a></td>
             </tr>
         </c:forEach>
 

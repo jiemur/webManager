@@ -10,22 +10,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-@WebServlet("/addB")
-public class AddBrandServlet extends HttpServlet {
+@WebServlet("/updateB")
+public class UpdateBrandServlet extends HttpServlet {
     private IBrandService service=new BrandServiceImpl();
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setCharacterEncoding("utf8");
-        String name= req.getParameter("name");
-        int id=Integer.parseInt(req.getParameter("id"));
-        String des= req.getParameter("des");
-        Brand b=new Brand();
-        b.setName(name);
-        b.setDes(des);
-        b.setId(id);
-        service.add(b);
-        resp.sendRedirect("brandList");
+       int id=Integer.parseInt(req.getParameter("id"));
+        Brand brand=service.getOne(id);
+        System.out.println(brand);
+        req.setAttribute("brand",brand);
+        req.getRequestDispatcher("updateBrand.jsp").forward(req,resp);
 
-
-    }
+}
 }

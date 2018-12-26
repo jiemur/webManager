@@ -13,11 +13,11 @@
 </head>
 <body>
 
-<form action="doUpdate" method="post"><%--设置地址栏不显示私有数据--%>
+<form action="doUpdate" method="post" enctype="multipart/form-data"><%--设置地址栏不显示私有数据--%>
     <input type="text" name="id" hidden="hidden" value="${p.id}">
     商品名称：<input type="text" name="name" value="${p.name}"><br>
     商品价格：<input type="text" name="price" value="${p.price}"><br>
-    商品图片：<input type="text" name="url" value="${p.url}"><br>
+    商品图片：<input type="file" name="file" value="${p.url}"><br>
     商品描述：<input type="text" name="des" value="${p.des}"><br>
     商品库存: <input type="text" name="inv" value="${p.inv}"><br>
     品牌编号: <input type="text" name="brandId" value="${p.brandId}">

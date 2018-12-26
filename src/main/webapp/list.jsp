@@ -12,6 +12,7 @@
     <meta charset="utf-8" />
     <title>首页</title>
     <link rel="stylesheet" href="css/page.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
     <script type="text/javascript" src="js/index.js" ></script>
 </head>
@@ -32,6 +33,6 @@
     <%--<div class="leftTiyle" id="flTitle">业务人员管理</div>--%>
     <div class="thisUser"><a href="exit">退出</a></div>
 </div>
-
+    <table class="table table-hover"></table>
 </body>
 </html>
